@@ -132,6 +132,33 @@ public class Review {
   }
  
 
+  public static String fakeReview(String fileName)
+  {
+      String str = textToString(fileName);
+      String word = "";
+      String finalStr = "";
+      for(int i =0; i < str.length();i++)
+      {
+        if(!str.substring(i,i+1).equals(" "))
+            {               
+            word += str.substring(i, i+1);
+            }
+            
+         if(str.substring(i,i+1).equals(" "))
+         {
+         if(word.startsWith("*"))
+         {
+         word= randomAdjective();
+         }
+         finalStr += word;
+         word = "";
+         }
+         
+      }
+      return finalStr;
+  }
+          
+     
 
   
   /** 

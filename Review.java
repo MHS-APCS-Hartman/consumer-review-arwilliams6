@@ -132,6 +132,54 @@ public class Review {
   }
  
 
+public static String fakeReviewStronger(fileName)
+  {
+    {
+      String str = textToString(fileName);
+      String word = "";
+      String finalStr = "";
+      for(int i =0; i < str.length();i++)
+      {
+         if(!str.substring(i,i+1).equals(" "))
+             {               
+             word += str.substring(i, i+1);
+             }
+             
+          if(str.substring(i,i+1).equals(" "))
+          {
+             if(word.startsWith("*"))
+             {
+                double g = sentimentVal(word);
+                String newAdj = "";
+                if(g < 0)
+                {
+                   newAdj = randomNegativeAdj();
+                   while(sentimentVal(newAdj) !< g)
+                   {
+                   newAdj = randomNegativeAdj();
+                   }
+                   
+                }
+                if(g > 0)
+                {
+               `   newAdj = randomPositiveAdj();
+                   while(sentimentVal(newAdj) !> g)
+                   {
+                   newAdj = randomPositiveAdj();
+                   }
+                   
+                }
+                word = newAdj;
+             {
+         
+          }
+         finalStr += word;
+         word = "";
+         }
+         
+      }
+      return finalStr;
+  }
 
   
   /** 

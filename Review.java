@@ -132,13 +132,20 @@ public class Review {
   }
  
 
+fakeReview()
   public static String fakeReview(String fileName)
   {
+
+public static String fakeReviewStronger(fileName)
+  {
+    {
+   master
       String str = textToString(fileName);
       String word = "";
       String finalStr = "";
       for(int i =0; i < str.length();i++)
       {
+fakeReview()
         if(!str.substring(i,i+1).equals(" "))
             {               
             word += str.substring(i, i+1);
@@ -150,6 +157,41 @@ public class Review {
          {
          word= randomAdjective();
          }
+
+         if(!str.substring(i,i+1).equals(" "))
+             {               
+             word += str.substring(i, i+1);
+             }
+             
+          if(str.substring(i,i+1).equals(" "))
+          {
+             if(word.startsWith("*"))
+             {
+                double g = sentimentVal(word);
+                String newAdj = "";
+                if(g < 0)
+                {
+                   newAdj = randomNegativeAdj();
+                   while(sentimentVal(newAdj) !< g)
+                   {
+                   newAdj = randomNegativeAdj();
+                   }
+                   
+                }
+                if(g > 0)
+                {
+               `   newAdj = randomPositiveAdj();
+                   while(sentimentVal(newAdj) !> g)
+                   {
+                   newAdj = randomPositiveAdj();
+                   }
+                   
+                }
+                word = newAdj;
+             {
+         
+          }
+     master
          finalStr += word;
          word = "";
          }
@@ -157,8 +199,10 @@ public class Review {
       }
       return finalStr;
   }
+ fakeReview()
           
      
+ master
 
   
   /** 
